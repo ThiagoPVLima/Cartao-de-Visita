@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style1.css">
+    <title>Thiago Lima - Virtual Card</title>
+</head>
+
+<body>
+    <div class="window main">
+        <div class="title-bar">
+            <div class="title-bar-text">My Profile.html</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <menu role="tablist">
+                <li role="tab" aria-selected="true" onclick="changeTab('tab-home', this)"><a href="#tabs">Home</a></li>
+                <li role="tab" onclick="changeTab('tab-skills', this)"><a href="#tabs">Skills</a></li>
+                <li role="tab" onclick="changeTab('tab-personal', this)"><a href="#tabs">Personal</a></li>
+            </menu>
+            <div class="window content" role="tabpanel" id="tab-home">
+                <div class="window-body">
+                    <img class="perfil" src="https://source.unsplash.com/random/200x200" alt="Foto do perfil">
+                    <h1>Thiago Lima</h1>
+                    <h3>Web Developer</h3>
+                    <h4>28 Anos</h4>
+                    <h4>Rio de Janeiro - RJ</h4>
+                    <p class="presentation">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
+                        for those interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                        in their exact original form, accompanied by English versions from the 1914 translation by H.
+                        Rackham The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                        interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                        reproduced in their exact original form, accompanied by English versions from the 1914
+                        translation by H. Rackham</p>
+                </div>
+            </div>
+            <div class="window content" role="tabpanel" id="tab-skills">
+                <div class="window-body">
+                    <ul class="tree-view">
+                        <li style="margin-bottom: 12px;">Algumas das minhas habilidades</li>
+                        <li>
+                            <details>
+                                <summary><img class="icon8bits" src="icon/Icone 8 bits/css.png" alt="Ícone do CSS">CSS</summary>
+                                <ul>
+                                    <li>Selectors</li>
+                                    <li>Specificity</li>
+                                    <li>Properties</li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary><img class="icon8bits" src="icon/Icone 8 bits/js.png" alt="Ícone do JavaScript">JavaScript</summary>
+                                <ul>
+                                    <li>Avoid at all costs</li>
+                                </ul>
+                            </details>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window content" role="tabpanel" id="tab-personal">
+                <div class="window-body">
+                    <!-- Conteúdo da guia Personal -->
+                    Personal
+                </div>
+            </div>
+        </div>
+        <div class="window-body social-button">
+            <a href="#" target="_blank"><button aria-label="GitHub"></button></a>
+            <a href="https://www.behance.net/LimaThii" target="_blank"><button aria-label="Behance"></button></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank"><button aria-label="Linkedin"></button></a>
+            <a href="#" target="_blank"><button aria-label="Email"></button></a>
+            <a href="#" target="_blank"><button aria-label="Instagram"></button></a>
+        </div>
+    </div>
+
+    <script>
+        function changeTab(tabId, clickedElement) {
+            const allTabs = document.querySelectorAll('.window[role="tabpanel"]');
+            const allTabsLi = document.querySelectorAll('[role="tab"]');
+
+            allTabs.forEach(tab => tab.style.display = 'none');
+            allTabsLi.forEach(li => li.setAttribute('aria-selected', 'false'));
+
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+                clickedElement.setAttribute('aria-selected', 'true');
+            }
+        }
+    </script>
+</body>
+
+</html>

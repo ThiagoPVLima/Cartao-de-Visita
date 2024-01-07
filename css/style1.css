@@ -1,0 +1,179 @@
+@import url(variables.css);
+@import url(buttons.css);
+@import url(title-bar.css);
+@import url(tree-view.css);
+
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url("../fonts/converted/ms_sans_serif.woff") format("woff");
+    src: url("../fonts/converted/ms_sans_serif.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url("../fonts/converted/ms_sans_serif_bold.woff") format("woff");
+    src: url("../fonts/converted/ms_sans_serif_bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial;
+    font-size: 12px;
+    color: var(--text-color);
+    background: rgba(0, 0, 0, 0.591);
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button,
+label,
+input,
+textarea,
+select,
+option,
+table,
+.window,
+.title-bar,
+li,
+li[role=tab] {
+    font-family: "Pixelated MS Sans Serif", Arial;
+    -webkit-font-smoothing: none;
+    font-size: 11px;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0px;
+}
+
+u {
+    text-decoration: none;
+    border-bottom: 0.5px solid #222222;
+}
+
+p {
+    font-size: 0.7rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 21rem;
+    height: 44rem;
+}
+
+.window {
+    box-shadow: var(--border-window-outer), var(--border-window-inner);
+    background: var(--surface);
+    padding: 3px;
+}
+
+.window-body {
+    margin: var(--element-spacing);
+}
+
+.presentation {
+    line-height: 1rem;
+}
+
+.window #tab-home .window-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.content {
+    display: none;
+}
+
+#tab-home {
+    min-height: 38.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.perfil {
+    background-color: red;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-top: 3rem;
+}
+
+.social-button {
+    position: absolute;
+    bottom: -3px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 0.3rem;
+}
+
+.window[role=tabpanel] {
+    position: relative;
+    z-index: 2;
+}
+
+menu[role=tablist] {
+    position: relative;
+    margin: 0 0 -2px 0;
+    text-indent: 0;
+    list-style-type: none;
+    display: flex;
+    padding-left: 3px;
+}
+
+menu[role=tablist]>li {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: var(--border-tab);
+    z-index: 1;
+}
+
+menu[role=tablist]>li[aria-selected=true] {
+    padding-bottom: 2px;
+    margin-top: -2px;
+    background-color: var(--surface);
+    position: relative;
+    z-index: 8;
+    margin-left: -3px;
+}
+
+menu[role=tablist]>li>a {
+    display: block;
+    color: #222;
+    margin: 6px;
+    text-decoration: none;
+}
+
+menu[role=tablist]>li[aria-selected=true]>a:focus {
+    outline: none;
+}
+
+menu[role=tablist]>li>a:focus {
+    outline: 1px dotted #222;
+}
+
+button:not(:disabled):active,
+input[type="submit"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    text-shadow: 1px 1px var(--text-color);
+}

@@ -1,0 +1,42 @@
+/* Title bar elements */
+.title-bar {
+    background: linear-gradient(90deg,
+            var(--dialog-blue),
+            var(--dialog-blue-light));
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar.inactive {
+    background: linear-gradient(90deg,
+            var(--dialog-gray),
+            var(--dialog-gray-light));
+}
+
+.title-bar-text {
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0;
+    margin-right: 24px;
+}
+
+.title-bar-controls {
+    display: flex;
+}
+
+.title-bar-controls button {
+    padding: 0;
+    display: block;
+    min-width: 16px;
+    min-height: 14px;
+}
+
+.title-bar-controls button:active {
+    padding: 0;
+}
+
+.title-bar-controls button:focus {
+    outline: none;
+}
