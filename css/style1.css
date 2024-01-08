@@ -110,7 +110,6 @@ p {
 }
 
 .perfil {
-    background-color: red;
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -118,6 +117,7 @@ p {
 }
 
 .social-button {
+    width: 20rem;
     position: absolute;
     bottom: -3px;
 
@@ -177,3 +177,5 @@ input[type="reset"]:not(:disabled):active {
     box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
     text-shadow: 1px 1px var(--text-color);
 }
+
+DianaWellness
