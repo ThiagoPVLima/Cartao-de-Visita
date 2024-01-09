@@ -38,9 +38,8 @@ button {
     box-shadow: var(--border-raised-outer), var(--border-raised-inner);
     border-radius: 0;
     
-    min-width: 70px;
+    min-width: 75px;
     min-height: 27px;
-    padding: 0 12px;
 }
 
 .title-bar-controls button[aria-label="Minimize"] {
@@ -75,31 +74,37 @@ button {
 }
 
 button[aria-label="GitHub"] {
-    background-image: url("../icon/github.svg");
+    background-image: url("../icon/github.png");
     background-repeat: no-repeat;
     background-size: 1.4rem;
-    background-position: center 57%;
+    background-position: 17% 20%;
+    text-align: end;
+    padding: 0rem 0.5rem;
 }
 
 button[aria-label="Behance"] {
-    background-image: url("../icon/behance.svg");
+    background-image: url("../icon/behance.png");
     background-repeat: no-repeat;
-    background-size: 1.4rem;
-    background-position: center 57%;
+    background-size: 1rem;
+    background-position: 10% 46%;
+    text-align: end;
 }
 
 button[aria-label="Linkedin"] {
-    background-image: url("../icon/linkedin.svg");
+    background-image: url("../icon/linkedin.png");
     background-repeat: no-repeat;
-    background-size: 1.4rem;
-    background-position: center 57%;
+    background-size: 1.3rem;
+    background-position: 5% 30%;
+    text-align: end;
 }
 
 button[aria-label="Email"] {
-    background-image: url("../icon/email.svg");
+    background-image: url("../icon/email.png");
     background-repeat: no-repeat;
-    background-size: 1.6rem;
-    background-position: center 57%;
+    background-size: 1rem;
+    background-position: 18% 55%;
+    text-align: end;
+    padding: 0rem 0.8rem;
 }
 
 button[aria-label="Instagram"] {

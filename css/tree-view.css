@@ -1,9 +1,16 @@
 ul.tree-view {
+    overflow: scroll;
+    max-height: 36.6rem;
+    min-height: 36.6rem;
     display: block;
     background: var(--button-highlight);
     box-shadow: var(--border-field);
     padding: 6px;
     margin: 0;
+}
+
+ul.tree-view::-webkit-scrollbar {
+    background-color: transparent;
 }
 
 ul.tree-view li {
