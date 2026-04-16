@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start *)",
+      "WebSearch",
+      "WebFetch(domain:archive.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:windowswallpaper.miraheze.org)"
+    ]
+  }
+}

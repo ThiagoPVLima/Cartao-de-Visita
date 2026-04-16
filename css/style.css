@@ -1,0 +1,434 @@
+:root {
+  --teal: #008080;
+  --win-blue: #000080;
+  --win-gray: #c0c0c0;
+  --win-dark: #808080;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-title: 'VT323', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--teal);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px,
+    transparent 1px, transparent 12px
+  );
+  font-family: var(--font-mono);
+  overflow: hidden;
+}
+
+/* ─── BOOT ─── */
+#boot-screen {
+  position: fixed; inset: 0;
+  background: #000; z-index: 9999;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 24px;
+}
+.boot-logo { font-family: var(--font-title); font-size: 52px; color: #fff; line-height: 1; }
+.boot-logo span { color: var(--teal); }
+.boot-subtitle { font-size: 12px; color: #888; letter-spacing: 2px; }
+.boot-bar-wrap { width: 280px; height: 18px; border: 2px solid #555; padding: 2px; background: #111; }
+.boot-bar-fill { height: 100%; width: 0%; background: var(--teal); transition: width 0.08s linear; }
+.boot-status { font-size: 11px; color: #666; height: 16px; }
+
+/* ─── CONTEXT MENU ─── */
+#ctx-menu {
+  position: fixed;
+  z-index: 9000;
+  background: var(--win-gray);
+  border: 1px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  min-width: 180px;
+  display: none;
+  padding: 2px;
+}
+#ctx-menu.open { display: block; }
+
+.ctx-menu-header {
+  font-size: 10px;
+  color: #666;
+  padding: 4px 10px 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 2px;
+}
+.ctx-menu-item {
+  font-size: 12px;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ctx-menu-item:hover { background: var(--win-blue); color: #fff; }
+.ctx-menu-item.active::after { content: ' ✓'; margin-left: auto; }
+
+.ctx-wp-dot {
+  width: 14px; height: 14px;
+  border: 1px solid #000;
+  flex-shrink: 0;
+}
+.ctx-menu-sep {
+  height: 1px;
+  background: #888;
+  box-shadow: 0 1px 0 #fff;
+  margin: 3px 4px;
+}
+
+/* ─── TEMA WINDOWS XP ─── */
+body.theme-xp {
+  background-color: #3a6ea5;
+  background-image: none;
+}
+
+/* Taskbar XP — barra azul com gradiente Luna */
+body.theme-xp #taskbar {
+  background: linear-gradient(to bottom,
+    #245ebd 0%, #1a52b3 4%,
+    #1e58bc 6%, #2264d4 50%,
+    #1d56c0 94%, #1548a8 100%);
+  border-top: 2px solid #1a40a0;
+  box-shadow: none;
+  height: 34px;
+}
+
+/* Botão Iniciar XP — verde arredondado */
+body.theme-xp #start-btn {
+  background: linear-gradient(to bottom, #5db85d 0%, #328c32 50%, #4aac4a 100%);
+  border: 1px solid #1e6e1e;
+  border-radius: 0 12px 12px 0;
+  color: #fff;
+  font-weight: bold;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  height: 28px;
+  padding: 0 14px 0 8px;
+  gap: 5px;
+}
+body.theme-xp #start-btn:hover {
+  background: linear-gradient(to bottom, #70cc70 0%, #3aa03a 50%, #5ac05a 100%);
+}
+body.theme-xp #start-btn svg rect { /* recolore o logo do start button */
+  filter: brightness(10);
+}
+
+/* Itens da taskbar XP */
+body.theme-xp .taskbar-task {
+  background: rgba(0,0,80,0.25);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  font-size: 11px;
+}
+body.theme-xp .taskbar-task:hover {
+  background: rgba(255,255,255,0.2);
+}
+body.theme-xp .taskbar-divider {
+  background: rgba(255,255,255,0.3);
+  box-shadow: none;
+}
+body.theme-xp #taskbar-clock {
+  background: rgba(0,0,80,0.3);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/* Título das janelas XP */
+body.theme-xp .title-bar-text {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Botões do título — xp.css usa ~21px, precisa de espaço */
+body.theme-xp .title-bar {
+  height: auto !important;
+  min-height: 28px;
+  padding: 3px 3px 3px 5px !important;
+  align-items: center;
+}
+body.theme-xp .title-bar-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+body.theme-xp .title-bar-controls button {
+  width: 21px !important;
+  height: 21px !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+}
+
+/* Garante que a janela principal não corte o título */
+body.theme-xp #main-window {
+  overflow: visible;
+}
+
+/* Botão social XP */
+body.theme-xp .social-bar {
+  border-top: 1px solid #aaa;
+}
+
+/* ─── ABAS NO TEMA XP ─── */
+/* xp.css não estiliza menu[role="tablist"] igual ao 98.css,
+   então fazemos o estilo manualmente só para o tema XP */
+body.theme-xp menu[role="tablist"] {
+  display: flex !important;
+  gap: 3px !important;
+  list-style: none !important;
+  padding: 4px 2px 0 !important;
+  margin: 0 0 -1px !important;
+  background: none !important;
+  border: none !important;
+}
+body.theme-xp menu[role="tablist"] li[role="tab"] {
+  display: block !important;
+}
+body.theme-xp menu[role="tablist"] li[role="tab"] a {
+  display: block;
+  padding: 4px 14px;
+  text-decoration: none;
+  color: #000;
+  background: #ece9d8;
+  border: 1px solid #919b9c;
+  border-bottom: 1px solid #ece9d8;
+  border-radius: 4px 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  position: relative;
+  top: 2px;
+  z-index: 1;
+  cursor: pointer;
+}
+body.theme-xp menu[role="tablist"] li[role="tab"][aria-selected="true"] a {
+  background: #fff;
+  border-color: #919b9c;
+  border-bottom-color: #fff;
+  top: 0;
+  z-index: 3;
+  font-weight: bold;
+}
+body.theme-xp menu[role="tablist"] li[role="tab"] a:hover {
+  background: #f0ede3;
+}
+
+/* ─── TASKBAR ─── */
+#taskbar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 32px; background: var(--win-gray);
+  border-top: 2px solid #fff;
+  display: flex; align-items: center;
+  padding: 0 4px; gap: 4px; z-index: 100;
+  box-shadow: 0 -1px 0 var(--win-dark);
+}
+#start-btn {
+  font-family: var(--font-mono); font-size: 11px; font-weight: bold;
+  padding: 2px 8px; height: 24px;
+  display: flex; align-items: center; gap: 4px;
+}
+.taskbar-divider { width: 1px; height: 22px; background: var(--win-dark); box-shadow: 1px 0 #fff; margin: 0 2px; }
+.taskbar-task {
+  height: 24px; font-family: var(--font-mono); font-size: 11px;
+  padding: 2px 8px; min-width: 120px; text-align: left;
+  display: flex; align-items: center; gap: 4px;
+}
+#taskbar-clock {
+  margin-left: auto; font-family: var(--font-mono); font-size: 11px;
+  border: 1px inset var(--win-gray); padding: 2px 8px;
+  min-width: 48px; text-align: center;
+}
+
+/* ─── DESKTOP ─── */
+#desktop {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 32px;
+  padding: 20px 20px 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── JANELAS ─── */
+.win-window {
+  position: absolute;
+  min-width: 280px;
+  box-shadow: 4px 4px 0 #000, 6px 6px 0 rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+#main-window {
+  position: relative;      /* centra via flexbox no carregamento */
+  width: 480px;
+  max-width: 100%;
+  max-height: calc(100vh - 72px);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.win-window .title-bar { cursor: grab; }
+.win-window .title-bar:active { cursor: grabbing; }
+.win-window.minimized { display: none !important; }
+.win-window.maximized {
+  position: fixed !important; top: 0 !important; left: 0 !important;
+  width: 100vw !important; height: calc(100vh - 32px) !important;
+  transform: none !important;
+}
+.win-window.maximized .main-scroll { max-height: calc(100vh - 140px) !important; }
+
+.title-bar-text {
+  font-family: var(--font-mono); font-size: 12px;
+  display: flex; align-items: center; gap: 4px;
+}
+.win-logo { vertical-align: middle; flex-shrink: 0; }
+
+/* ─── PERFIL ─── */
+.main-scroll { max-height: calc(100vh - 220px); overflow-y: auto; padding: 1px; }
+
+.profile-section {
+  display: flex; align-items: center; gap: 14px;
+  padding-bottom: 12px; border-bottom: 1px solid #888; margin-bottom: 10px;
+}
+.profile-pic {
+  width: 76px; height: 76px; object-fit: cover;
+  border: 2px solid #000; box-shadow: 2px 2px 0 #000;
+  flex-shrink: 0; image-rendering: pixelated;
+}
+.profile-info h1 { font-family: var(--font-title); font-size: 30px; margin: 0 0 2px; line-height: 1; }
+.profile-info .role { font-size: 11px; color: #444; margin: 0 0 5px; }
+.profile-info .meta { display: flex; gap: 12px; font-size: 11px; color: #555; flex-wrap: wrap; }
+
+/* ─── ABAS PRINCIPAIS ─── */
+/* Apenas ajusta margin/padding — o layout fica com 98.css/xp.css */
+menu[role="tablist"] {
+  margin: 0 0 -2px !important;
+  padding: 0 !important;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.12s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── BIO ─── */
+.bio-text { font-size: 12px; line-height: 1.8; color: #222; margin: 0; }
+
+/* ─── SKILLS ─── */
+.skills-nav {
+  display: flex; gap: 2px; flex-wrap: nowrap;
+  justify-content: center;
+  border-bottom: 1px solid #888; margin-bottom: 8px; padding: 0 8px;
+}
+.skill-nav-btn {
+  font-family: var(--font-mono); font-size: 11px;
+  background: #d4d0c8; border: 1px solid #888;
+  border-bottom: none; padding: 3px 10px;
+  cursor: pointer; margin-bottom: -1px;
+  position: relative; text-align: center; white-space: nowrap;
+}
+.skill-nav-btn:hover { background: #e8e4dc; }
+.skill-nav-btn.active { background: #fff; border-bottom: 1px solid #fff; z-index: 1; font-weight: bold; }
+
+.skill-cat { display: none; }
+.skill-cat.active { display: block; animation: fadeIn 0.1s ease; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 4px 0; }
+.skill-tag {
+  font-family: var(--font-mono); font-size: 11px;
+  border: 1px solid #808080; padding: 3px 8px; background: #fff;
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000;
+  white-space: nowrap;
+}
+.skill-tag:hover { background: var(--win-blue); color: #fff; cursor: default; }
+
+.skill-cat-title {
+  font-size: 10px; color: #888; margin: 0 0 6px;
+  border-bottom: 1px dashed #ccc; padding-bottom: 3px;
+}
+
+/* ─── CONTATO ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+
+.contact-card {
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000;
+  padding: 7px 10px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; font-family: var(--font-mono);
+  cursor: pointer; background: #fff; text-decoration: none; color: inherit;
+}
+.contact-card:hover { background: var(--win-blue); color: #fff; }
+.contact-card:hover .contact-card-label { color: #aaa; }
+
+.contact-card-icon { font-size: 18px; line-height: 1; flex-shrink: 0; }
+.contact-card-info { display: flex; flex-direction: column; gap: 1px; overflow: hidden; }
+.contact-card-label { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.contact-card-value { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ─── FORMULÁRIO ─── */
+.contact-form-section { border-top: 1px solid #ccc; padding-top: 10px; margin-top: 2px; }
+.contact-form-title { font-size: 11px; color: #444; margin: 0 0 8px; }
+.form-row { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
+.form-row label { font-size: 10px; color: #555; }
+.form-row input,
+.form-row textarea {
+  font-family: var(--font-mono); font-size: 11px;
+  border: 1px solid #808080;
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #fff;
+  padding: 3px 5px; background: #fff; width: 100%; resize: none;
+}
+.form-row textarea { height: 52px; }
+.form-btns { display: flex; justify-content: flex-end; gap: 6px; }
+.form-btns button { font-family: var(--font-mono); font-size: 11px; min-width: 64px; }
+
+/* ─── BOTÕES SOCIAIS ─── */
+.social-bar {
+  display: flex; gap: 5px; flex-wrap: wrap;
+  padding: 8px 8px 6px; border-top: 1px solid #888; margin-top: 4px;
+}
+.social-bar button { font-family: var(--font-mono); font-size: 11px; flex: 1; min-width: 70px; }
+
+/* ─── STATUS BAR ─── */
+.status-bar { font-size: 10px; }
+.status-bar-field { font-family: var(--font-mono); }
+
+/* ─── POPUPS ─── */
+.popup-window { display: none; z-index: 500; }
+.popup-window.open { display: block; }
+
+.popup-body { padding: 12px; font-family: var(--font-mono); font-size: 12px; line-height: 1.8; }
+.popup-body a { color: var(--win-blue); text-decoration: none; }
+.popup-body a:hover { text-decoration: underline; }
+.popup-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.popup-icon { font-size: 28px; line-height: 1; }
+.popup-btns { display: flex; justify-content: flex-end; gap: 6px; margin-top: 10px; }
+.popup-btns button { font-family: var(--font-mono); font-size: 11px; min-width: 64px; }
+
+/* ─── TASK MANAGER ─── */
+#task-manager { width: 380px; }
+.task-table { width: 100%; border-collapse: collapse; font-size: 11px; font-family: var(--font-mono); }
+.task-table th { background: var(--win-blue); color: #fff; padding: 3px 6px; text-align: left; font-weight: normal; }
+.task-table td { padding: 3px 6px; border-bottom: 1px solid #ddd; }
+.task-table tr:nth-child(even) td { background: #f0f0f0; }
+.cpu-bar { height: 10px; background: #ddd; border: 1px solid #999; }
+.cpu-bar-fill { height: 100%; background: var(--win-blue); }
+
+/* ─── NOTIFICATION ─── */
+#notification {
+  position: fixed !important; bottom: 40px !important; right: 8px !important;
+  width: 230px; z-index: 800; display: none;
+}
+#notification.show { display: block; animation: slideUp 0.2s ease; }
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.notif-body { padding: 8px 10px; font-size: 11px; font-family: var(--font-mono); line-height: 1.5; }

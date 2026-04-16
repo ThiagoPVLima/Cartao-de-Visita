@@ -1,236 +1,409 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style1.css">
-    <title>Thiago Lima - Virtual Card</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiago Lima — Dev & Designer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" id="theme-css" href="https://unpkg.com/98.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="window main">
-        <div class="title-bar">
-            <div class="title-bar-text">My Profile.html</div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Help"></button>
-                <button aria-label="Close"></button>
-            </div>
-        </div>
-        <div class="window-body">
-            <menu role="tablist">
-                <li role="tab" aria-selected="true" onclick="changeTab('tab-home', this)"><a href="#tabs">Home</a></li>
-                <li role="tab" onclick="changeTab('tab-skills', this)"><a href="#tabs">Skills</a></li>
-                <li role="tab" onclick="changeTab('tab-personal', this)"><a href="#tabs">Personal</a></li>
-            </menu>
-            <div class="window content" role="tabpanel" id="tab-home">
-                <div class="window-body">
-                    <img class="perfil" src="https://source.unsplash.com/random/200x200" alt="Foto do perfil">
-                    <h1>Thiago Lima</h1>
-                    <h3>Web Developer</h3>
-                    <h4><spam id="idade">28</spam> Anos</h4>
-                    <h4>Rio de Janeiro - RJ</h4>
-                    <p class="presentation">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-                        for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H.
-                        Rackham The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                        interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                        reproduced in their exact original form, accompanied by English versions from the 1914
-                        translation by H. Rackham</p>
-                </div>
-            </div>
-            <div class="window content" role="tabpanel" id="tab-skills">
-                <div class="window-body">
-                    <ul class="tree-view">
-                        <li style="margin-bottom: 12px;">Algumas das minhas habilidades:</li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/css.png" alt="Ícone do CSS 3">CSS
-                                </summary>
-                                <ul>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>]
-                                    <li>Selectors</li>
-                                    <li>Specificity</li>
-                                    <li>Properties</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/js.png"
-                                        alt="Ícone do JavaScript">JavaScript</summary>
-                                <ul>
-                                    <li>Avoid at all costs</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/html.png"
-                                        alt="Ícone do HTML 5">HTML
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/ps.png"
-                                        alt="Ícone do PhotoShop">Photoshop
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/i.png"
-                                        alt="Ícone do Illustrator">Illustrator
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/figma.png"
-                                        alt="Ícone do Figma">Figma
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/design.png"
-                                        alt="Ícone do Design">Design
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/ui.png" alt="Ícone do UI">UI
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary><img class="icon8bits" src="icon/Icone 8 bits/ux.png" alt="Ícone do UX">UX
-                                </summary>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="window content" role="tabpanel" id="tab-personal">
-                <div class="window-body">
-                    <!-- Conteúdo da guia Personal -->
-                    Personal
-                </div>
-            </div>
-        </div>
-        <div class="window-body social-button">
-            <a href="https://github.com/ThiagoPVLima" target="_blank"><button aria-label="GitHub">GitHub</button></a>
-            <a href="https://www.behance.net/LimaThii" target="_blank"><button aria-label="Behance">Behance</button></a>
-            <a href="https://www.linkedin.com/feed/" target="_blank"><button aria-label="Linkedin">Linkedin</button></a>
-            <a href="#" target="_blank"><button aria-label="Email">Email</button></a>
-        </div>
+
+<!-- BOOT -->
+<div id="boot-screen">
+  <div class="boot-logo">Thiago<span>OS</span></div>
+  <div class="boot-subtitle">PORTFOLIO SYSTEM v3.0</div>
+  <div class="boot-bar-wrap"><div class="boot-bar-fill" id="boot-bar"></div></div>
+  <div class="boot-status" id="boot-status">Inicializando...</div>
+</div>
+
+<!-- MENU DE CONTEXTO (botão direito no desktop) -->
+<div id="ctx-menu">
+  <div class="ctx-menu-header">Tema</div>
+  <div class="ctx-menu-item ctx-theme active" onclick="setTheme('98')">
+    <span class="ctx-wp-dot" style="background:#000080"></span>Windows 98
+  </div>
+  <div class="ctx-menu-item ctx-theme" onclick="setTheme('xp')">
+    <span class="ctx-wp-dot" style="background:linear-gradient(135deg,#1d5fbe,#5cb85c)"></span>Windows XP
+  </div>
+  <div class="ctx-menu-sep"></div>
+  <div class="ctx-menu-header">Plano de Fundo</div>
+  <div class="ctx-menu-item ctx-wallpaper active" onclick="setWallpaper(0)">
+    <span class="ctx-wp-dot" style="background:linear-gradient(180deg,#87ceeb 40%,#5aa54e 60%)"></span>Bliss
+  </div>
+  <div class="ctx-menu-item ctx-wallpaper" onclick="setWallpaper(1)">
+    <span class="ctx-wp-dot" style="background:radial-gradient(#0050c8,#001860)"></span>Azul
+  </div>
+  <div class="ctx-menu-item ctx-wallpaper" onclick="setWallpaper(2)">
+    <span class="ctx-wp-dot" style="background:linear-gradient(135deg,#c8602a,#8b4513)"></span>Autumn
+  </div>
+  <div class="ctx-menu-item ctx-wallpaper" onclick="setWallpaper(3)">
+    <span class="ctx-wp-dot" style="background:radial-gradient(#3a0080,#0a0020)"></span>Vortec Space
+  </div>
+  <div class="ctx-menu-item ctx-wallpaper" onclick="setWallpaper(4)">
+    <span class="ctx-wp-dot" style="background:linear-gradient(180deg,#8b2a00,#3a1a00)"></span>Red Moon Desert
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div id="desktop">
+
+  <!-- ══ JANELA PRINCIPAL ══ -->
+  <div class="window win-window" id="main-window">
+    <div class="title-bar" id="main-title-bar">
+      <div class="title-bar-text">
+        <svg class="win-logo" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0"   y="0"   width="5.5" height="5.5" fill="#f35325"/>
+          <rect x="6.5" y="0"   width="5.5" height="5.5" fill="#81bc06"/>
+          <rect x="0"   y="6.5" width="5.5" height="5.5" fill="#05a6f0"/>
+          <rect x="6.5" y="6.5" width="5.5" height="5.5" fill="#ffba08"/>
+        </svg>
+        ThiagoLima.profile
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('main-window')"></button>
+        <button aria-label="Maximize" onclick="maximizeWindow('main-window')"></button>
+        <button aria-label="Close"    onclick="closeWindow('main-window')"></button>
+      </div>
     </div>
 
-    <script>
-        function changeTab(tabId, clickedElement) {
-            const allTabs = document.querySelectorAll('.window[role="tabpanel"]');
-            const allTabsLi = document.querySelectorAll('[role="tab"]');
+    <div class="window-body">
+      <div class="main-scroll">
 
-            allTabs.forEach(tab => tab.style.display = 'none');
-            allTabsLi.forEach(li => li.setAttribute('aria-selected', 'false'));
+        <!-- Perfil -->
+        <div class="profile-section">
+          <img class="profile-pic"
+            src="https://avatars.githubusercontent.com/ThiagoPVLima"
+            alt="Thiago Lima"
+            onerror="this.src='https://placehold.co/76x76/c0c0c0/000?text=TL'">
+          <div class="profile-info">
+            <h1>Thiago Lima</h1>
+            <p class="role">Front-end Developer &amp; Designer</p>
+            <div class="meta">
+              <span>🎂 <span id="idade">--</span> anos</span>
+              <span>📍 Rio de Janeiro, RJ</span>
+            </div>
+          </div>
+        </div>
 
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-                clickedElement.setAttribute('aria-selected', 'true');
-            }
-        }
-        // Função para atualizar a idade automaticamente
-        function atualizarIdade() {
-            var dataNascimento = new Date("1995-08-08"); // Substitua pela sua data de nascimento
-            var hoje = new Date();
+        <!-- Abas principais -->
+        <menu role="tablist">
+          <li role="tab" aria-selected="true" onclick="changeTab('home',this)"><a href="#tabs">Home</a></li>
+          <li role="tab" onclick="changeTab('skills',this)"><a href="#tabs">Skills</a></li>
+          <li role="tab" onclick="changeTab('contact',this)"><a href="#tabs">Contato</a></li>
+        </menu>
 
-            var diferencaAnos = hoje.getFullYear() - dataNascimento.getFullYear();
+        <div class="window" id="tabs" style="margin-top:0">
+          <div class="window-body">
 
-            document.getElementById("idade").innerText = diferencaAnos;
-        }
+            <!-- HOME -->
+            <div class="tab-panel active" id="tab-home">
+              <p class="bio-text">
+                Olá! Sou Thiago Lima, desenvolvedor front-end e designer baseado no Rio de Janeiro.
+                Apaixonado pela interseção entre código e design — acredito que uma boa interface
+                é aquela que ninguém percebe o esforço que teve. Tenho experiência com HTML, CSS,
+                JavaScript, frameworks modernos e ferramentas de design como Figma e Photoshop.
+              </p>
+            </div>
 
-        // Atualizar a idade inicialmente
-        atualizarIdade();
+            <!-- SKILLS -->
+            <div class="tab-panel" id="tab-skills">
+              <div class="skills-nav">
+                <button class="skill-nav-btn active" onclick="changeSkillCat('frontend', this)">Front-end</button>
+                <button class="skill-nav-btn" onclick="changeSkillCat('css', this)">CSS/Estilos</button>
+                <button class="skill-nav-btn" onclick="changeSkillCat('design', this)">Design</button>
+                <button class="skill-nav-btn" onclick="changeSkillCat('tools', this)">Ferramentas</button>
+                <button class="skill-nav-btn" onclick="changeSkillCat('backend', this)">Back/API</button>
+              </div>
 
-        // Atualizar a idade a cada segundo (1000 milissegundos)
-        setInterval(atualizarIdade, 1000);
-    </script>
+              <div class="skill-cat active" id="cat-frontend">
+                <p class="skill-cat-title">Linguagens & Frameworks</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Svelte</span>
+                  <span class="skill-tag">SvelteKit</span>
+                  <span class="skill-tag">Vue.js</span>
+                </div>
+              </div>
+
+              <div class="skill-cat" id="cat-css">
+                <p class="skill-cat-title">CSS, Frameworks & Arquitetura</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Tailwind CSS</span>
+                  <span class="skill-tag">Bootstrap</span>
+                  <span class="skill-tag">ITCSS</span>
+                  <span class="skill-tag">Atomic CSS</span>
+                  <span class="skill-tag">BEM</span>
+                  <span class="skill-tag">Sass/SCSS</span>
+                </div>
+              </div>
+
+              <div class="skill-cat" id="cat-design">
+                <p class="skill-cat-title">Design & UI/UX</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Photoshop</span>
+                  <span class="skill-tag">Illustrator</span>
+                  <span class="skill-tag">UI Design</span>
+                  <span class="skill-tag">UX Research</span>
+                  <span class="skill-tag">Prototipação</span>
+                </div>
+              </div>
+
+              <div class="skill-cat" id="cat-tools">
+                <p class="skill-cat-title">Ferramentas & DevOps</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">GitHub</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">VS Code</span>
+                  <span class="skill-tag">npm / yarn</span>
+                  <span class="skill-tag">Vite</span>
+                </div>
+              </div>
+
+              <div class="skill-cat" id="cat-backend">
+                <p class="skill-cat-title">Integração & APIs</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Fetch API</span>
+                  <span class="skill-tag">Axios</span>
+                  <span class="skill-tag">REST API</span>
+                  <span class="skill-tag">JSON</span>
+                  <span class="skill-tag">Node.js</span>
+                </div>
+              </div>
+            </div><!-- /tab-skills -->
+
+            <!-- CONTATO -->
+            <div class="tab-panel" id="tab-contact">
+              <div class="contact-grid">
+                <a class="contact-card" href="#" onclick="openPopup('popup-github');return false">
+                  <span class="contact-card-icon">🐙</span>
+                  <div class="contact-card-info">
+                    <span class="contact-card-label">GitHub</span>
+                    <span class="contact-card-value">ThiagoPVLima</span>
+                  </div>
+                </a>
+                <a class="contact-card" href="#" onclick="openPopup('popup-behance');return false">
+                  <span class="contact-card-icon">🎨</span>
+                  <div class="contact-card-info">
+                    <span class="contact-card-label">Behance</span>
+                    <span class="contact-card-value">LimaThii</span>
+                  </div>
+                </a>
+                <a class="contact-card" href="#" onclick="openPopup('popup-linkedin');return false">
+                  <span class="contact-card-icon">💼</span>
+                  <div class="contact-card-info">
+                    <span class="contact-card-label">LinkedIn</span>
+                    <span class="contact-card-value">thiago-lima-312a0aaa</span>
+                  </div>
+                </a>
+                <a class="contact-card" href="#" onclick="openPopup('popup-email');return false">
+                  <span class="contact-card-icon">✉️</span>
+                  <div class="contact-card-info">
+                    <span class="contact-card-label">Email</span>
+                    <span class="contact-card-value">thiagopvlima@gmail.com</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="contact-form-section">
+                <p class="contact-form-title">📨 Enviar mensagem direta</p>
+                <div class="form-row">
+                  <label for="f-name">Seu nome</label>
+                  <input type="text" id="f-name" placeholder="Ex: João Silva">
+                </div>
+                <div class="form-row">
+                  <label for="f-email">Seu email</label>
+                  <input type="email" id="f-email" placeholder="joao@email.com">
+                </div>
+                <div class="form-row">
+                  <label for="f-msg">Mensagem</label>
+                  <textarea id="f-msg" placeholder="Olá Thiago, quero conversar sobre..."></textarea>
+                </div>
+                <div class="form-btns">
+                  <button onclick="submitForm()">Enviar</button>
+                  <button onclick="clearForm()">Limpar</button>
+                </div>
+              </div>
+            </div><!-- /tab-contact -->
+
+          </div>
+        </div>
+      </div><!-- /main-scroll -->
+
+      <div class="social-bar">
+        <button onclick="openPopup('popup-github')">GitHub</button>
+        <button onclick="openPopup('popup-behance')">Behance</button>
+        <button onclick="openPopup('popup-linkedin')">LinkedIn</button>
+        <button onclick="openPopup('popup-email')">Email</button>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <p class="status-bar-field" id="status-msg">Disponível para projetos</p>
+      <p class="status-bar-field" id="status-time"></p>
+    </div>
+  </div>
+
+  <!-- ══ TASK MANAGER ══ -->
+  <div class="window win-window popup-window" id="task-manager" style="top:60px;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="task-manager-bar">
+      <div class="title-bar-text">⚙️ Gerenciador de Tarefas</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closePopup('task-manager')"></button>
+      </div>
+    </div>
+    <div class="window-body" style="padding:8px">
+      <table class="task-table">
+        <thead><tr><th>Processo</th><th style="width:120px">CPU</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>html_css.exe</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:95%"></div></div></td><td>Em execução</td></tr>
+          <tr><td>typescript.exe</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:72%"></div></div></td><td>Em execução</td></tr>
+          <tr><td>svelte_kit.exe</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:80%"></div></div></td><td>Em execução</td></tr>
+          <tr><td>figma_design.exe</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:85%"></div></div></td><td>Em execução</td></tr>
+          <tr><td>coffee_daemon</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:100%"></div></div></td><td>🔴 Crítico</td></tr>
+          <tr><td>docker.service</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:35%"></div></div></td><td>Iniciando</td></tr>
+          <tr><td>bug_fixer.bat</td><td><div class="cpu-bar"><div class="cpu-bar-fill" style="width:40%"></div></div></td><td>Aguardando</td></tr>
+        </tbody>
+      </table>
+      <div style="display:flex;justify-content:flex-end;margin-top:8px">
+        <button onclick="closePopup('task-manager')" style="font-family:var(--font-mono);font-size:11px">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POPUP GITHUB ══ -->
+  <div class="window win-window popup-window" id="popup-github" style="width:290px;top:20%;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="popup-github-bar">
+      <div class="title-bar-text">🐙 GitHub</div>
+      <div class="title-bar-controls"><button aria-label="Close" onclick="closePopup('popup-github')"></button></div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-icon-row">
+        <span class="popup-icon">🐙</span>
+        <div>Abrir perfil do GitHub?<br><a href="https://github.com/ThiagoPVLima" target="_blank">github.com/ThiagoPVLima</a></div>
+      </div>
+      <div class="popup-btns">
+        <button onclick="window.open('https://github.com/ThiagoPVLima','_blank');closePopup('popup-github')">Abrir</button>
+        <button onclick="closePopup('popup-github')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POPUP BEHANCE ══ -->
+  <div class="window win-window popup-window" id="popup-behance" style="width:290px;top:20%;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="popup-behance-bar">
+      <div class="title-bar-text">🎨 Behance</div>
+      <div class="title-bar-controls"><button aria-label="Close" onclick="closePopup('popup-behance')"></button></div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-icon-row">
+        <span class="popup-icon">🎨</span>
+        <div>Abrir portfólio no Behance?<br><a href="https://www.behance.net/LimaThii" target="_blank">behance.net/LimaThii</a></div>
+      </div>
+      <div class="popup-btns">
+        <button onclick="window.open('https://www.behance.net/LimaThii','_blank');closePopup('popup-behance')">Abrir</button>
+        <button onclick="closePopup('popup-behance')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POPUP LINKEDIN ══ -->
+  <div class="window win-window popup-window" id="popup-linkedin" style="width:290px;top:20%;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="popup-linkedin-bar">
+      <div class="title-bar-text">💼 LinkedIn</div>
+      <div class="title-bar-controls"><button aria-label="Close" onclick="closePopup('popup-linkedin')"></button></div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-icon-row">
+        <span class="popup-icon">💼</span>
+        <div>Abrir perfil no LinkedIn?<br><a href="https://www.linkedin.com/in/thiago-lima-312a0aaa/" target="_blank">linkedin.com/in/thiago-lima-312a0aaa</a></div>
+      </div>
+      <div class="popup-btns">
+        <button onclick="window.open('https://www.linkedin.com/in/thiago-lima-312a0aaa/','_blank');closePopup('popup-linkedin')">Abrir</button>
+        <button onclick="closePopup('popup-linkedin')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POPUP EMAIL ══ -->
+  <div class="window win-window popup-window" id="popup-email" style="width:290px;top:20%;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="popup-email-bar">
+      <div class="title-bar-text">✉️ Email</div>
+      <div class="title-bar-controls"><button aria-label="Close" onclick="closePopup('popup-email')"></button></div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-icon-row">
+        <span class="popup-icon">✉️</span>
+        <div>Enviar email para:<br><a href="mailto:thiagopvlima@gmail.com">thiagopvlima@gmail.com</a></div>
+      </div>
+      <div class="popup-btns">
+        <button onclick="window.location.href='mailto:thiagopvlima@gmail.com';closePopup('popup-email')">Enviar</button>
+        <button onclick="closePopup('popup-email')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NOTIFICATION ══ -->
+  <div class="window win-window" id="notification">
+    <div class="title-bar" style="padding:2px 4px">
+      <div class="title-bar-text" style="font-size:11px" id="notif-title">Notificação</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="hideNotif()"></button>
+      </div>
+    </div>
+    <div class="notif-body" id="notif-body"></div>
+  </div>
+
+  <!-- ══ POPUP MENSAGEM ENVIADA ══ -->
+  <div class="window win-window popup-window" id="popup-sent" style="width:260px;top:30%;left:50%;transform:translateX(-50%)">
+    <div class="title-bar" id="popup-sent-bar">
+      <div class="title-bar-text">✅ Mensagem</div>
+      <div class="title-bar-controls"><button aria-label="Close" onclick="closePopup('popup-sent')"></button></div>
+    </div>
+    <div class="popup-body">
+      <div class="popup-icon-row">
+        <span class="popup-icon">📨</span>
+        <div id="sent-msg-text">Mensagem enviada com sucesso!</div>
+      </div>
+      <div class="popup-btns">
+        <button onclick="closePopup('popup-sent')">OK</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /desktop -->
+
+<!-- TASKBAR -->
+<div id="taskbar">
+  <button id="start-btn" onclick="showNotif('ThiagoOS','Sistema ativo!')">
+    <svg class="win-logo" width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0"  y="0"  width="6" height="6" fill="#f35325"/>
+      <rect x="7"  y="0"  width="6" height="6" fill="#81bc06"/>
+      <rect x="0"  y="7"  width="6" height="6" fill="#05a6f0"/>
+      <rect x="7"  y="7"  width="6" height="6" fill="#ffba08"/>
+    </svg>
+    Iniciar
+  </button>
+  <div class="taskbar-divider"></div>
+  <button class="taskbar-task" id="task-main" onclick="restoreWindow('main-window')">
+    <svg class="win-logo" width="11" height="11" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0"   y="0"   width="5.5" height="5.5" fill="#f35325"/>
+      <rect x="6.5" y="0"   width="5.5" height="5.5" fill="#81bc06"/>
+      <rect x="0"   y="6.5" width="5.5" height="5.5" fill="#05a6f0"/>
+      <rect x="6.5" y="6.5" width="5.5" height="5.5" fill="#ffba08"/>
+    </svg>
+    ThiagoLima.profile
+  </button>
+  <div id="taskbar-clock">00:00</div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
-
 </html>
