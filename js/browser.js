@@ -6,6 +6,17 @@ import { maxed, makeDraggable } from './windows.js';
 let browserZ = 600;
 const openBrowsers = {};
 
+// ── Calcula posição centralizada com offset em cascata ──
+function calcPosition(off) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const w  = Math.min(820, vw - 40);
+  const h  = Math.min(520, vh - 80);
+  const left = Math.max(8, Math.round((vw - w) / 2) + off * 24);
+  const top  = Math.max(8, Math.round((vh - h) / 2) + off * 24 - 16);
+  return { w, h, left, top };
+}
+
 export function openBrowser(key) {
   document.getElementById('start-menu').classList.remove('open');
 
@@ -25,37 +36,46 @@ export function openBrowser(key) {
   const winId = 'browser-' + key;
   const barId = 'browser-bar-' + key;
   const off   = Object.keys(openBrowsers).length;
+  const { w, h, left, top } = calcPosition(off);
 
   const win = document.createElement('div');
   win.className = 'window win-window browser-window';
   win.id = winId;
 
-  const w = Math.min(820, window.innerWidth  - 40);
-  const h = Math.min(520, window.innerHeight - 80);
   win.style.cssText = [
     'position:absolute',
-    `top:${50 + off * 24}px`,
-    `left:${80 + off * 24}px`,
+    `top:${top}px`,
+    `left:${left}px`,
     `width:${w}px`,
     `height:${h}px`,
-    `z-index:${++browserZ}`,
+    `z-index:${++browserZ}`,  // começa acima dos ícones (z-index:10)
     'display:flex',
     'flex-direction:column',
   ].join(';');
 
-  const contentHtml = proj.url
-    ? `<iframe id="iframe-${key}" src="${proj.url}" frameborder="0" allowfullscreen></iframe>
-       <div class="browser-blocked" id="blocked-${key}" style="display:none">
-         <div class="browser-blocked-icon">🚫</div>
-         <div class="browser-blocked-title">Conteúdo bloqueado</div>
-         <div class="browser-blocked-msg">Este site não permite ser exibido em frames.<br>Use o botão ⧉ na barra para abrir em nova aba.</div>
-         <button onclick="window.open('${proj.url}','_blank')">Abrir em nova aba ↗</button>
-       </div>`
-    : `<div class="browser-soon">
+  const isHttp = proj.url && proj.url.startsWith('http://');
+
+  const contentHtml = !proj.url
+    ? `<div class="browser-soon">
          <div class="browser-soon-icon">${proj.icon}</div>
          <div class="browser-soon-title">${proj.name}</div>
          <div class="browser-soon-msg">Em construção<br>Em breve disponível!</div>
-       </div>`;
+       </div>`
+    : isHttp
+      ? `<div class="browser-soon">
+           <div class="browser-soon-icon">${proj.icon}</div>
+           <div class="browser-soon-title">${proj.name}</div>
+           <div class="browser-soon-msg">Este site usa HTTP e não pode ser exibido<br>aqui por restrições de segurança do browser.<br><br>
+             <button onclick="window.open('${proj.url}','_blank')">Abrir em nova aba ↗</button>
+           </div>
+         </div>`
+      : `<iframe id="iframe-${key}" src="${proj.url}" frameborder="0" allowfullscreen></iframe>
+         <div class="browser-blocked" id="blocked-${key}" style="display:none">
+           <div class="browser-blocked-icon">🚫</div>
+           <div class="browser-blocked-title">Conteúdo bloqueado</div>
+           <div class="browser-blocked-msg">Este site não permite ser exibido em frames.<br>Use o botão ⧉ na barra para abrir em nova aba.</div>
+           <button onclick="window.open('${proj.url}','_blank')">Abrir em nova aba ↗</button>
+         </div>`;
 
   win.innerHTML = `
     <div class="title-bar" id="${barId}">
@@ -86,7 +106,9 @@ export function openBrowser(key) {
   addTaskbarBtn(key, proj);
   playClick();
 
+  // Traz para frente ao clicar (mouse e touch)
   win.addEventListener('mousedown', () => { win.style.zIndex = ++browserZ; });
+  win.addEventListener('touchstart', () => { win.style.zIndex = ++browserZ; }, { passive: true });
 }
 
 export function closeBrowser(key) {
