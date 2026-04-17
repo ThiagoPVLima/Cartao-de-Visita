@@ -1,0 +1,12 @@
+#boot-screen {
+  position: fixed; inset: 0;
+  background: #000; z-index: 9999;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 24px;
+}
+.boot-logo { font-family: var(--font-title); font-size: 52px; color: #fff; line-height: 1; }
+.boot-logo span { color: var(--teal); }
+.boot-subtitle { font-size: 12px; color: #888; letter-spacing: 2px; }
+.boot-bar-wrap { width: 280px; height: 18px; border: 2px solid #555; padding: 2px; background: #111; }
+.boot-bar-fill { height: 100%; width: 0%; background: var(--teal); transition: width 0.08s linear; }
+.boot-status { font-size: 11px; color: #666; height: 16px; }

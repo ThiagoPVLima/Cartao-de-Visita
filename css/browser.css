@@ -1,0 +1,35 @@
+/* ─── JANELA DE BROWSER ─── */
+.browser-window { overflow: visible !important; display: flex; flex-direction: column; }
+
+.browser-toolbar {
+  display: flex; align-items: center; gap: 3px;
+  padding: 3px 4px; background: var(--win-gray);
+  border-bottom: 1px solid #808080; flex-shrink: 0;
+}
+.browser-nav-btn {
+  font-size: 13px; padding: 0 5px; font-family: var(--font-mono);
+  min-width: 24px; height: 22px; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.browser-address-bar {
+  flex: 1; display: flex; align-items: center; gap: 5px;
+  background: #fff; border: 2px solid; border-color: #808080 #fff #fff #808080;
+  padding: 2px 6px; font-family: var(--font-mono); font-size: 11px;
+  overflow: hidden; min-width: 0;
+}
+.browser-address-icon { font-size: 12px; flex-shrink: 0; }
+.browser-url { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; color: #000080; }
+
+.browser-content { flex: 1; position: relative; background: #fff; overflow: hidden; min-height: 0; }
+.browser-content iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.browser-blocked,
+.browser-soon {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; background: #f0f0f0; font-family: var(--font-mono); text-align: center; padding: 24px;
+}
+.browser-blocked-icon, .browser-soon-icon { font-size: 44px; line-height: 1; }
+.browser-blocked-title, .browser-soon-title { font-size: 15px; font-weight: bold; color: #000; }
+.browser-blocked-msg, .browser-soon-msg { font-size: 11px; color: #555; line-height: 1.6; }
+.browser-blocked button { font-family: var(--font-mono); font-size: 11px; padding: 3px 14px; cursor: pointer; margin-top: 4px; }

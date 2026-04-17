@@ -1,0 +1,76 @@
+/* ─── MENU DE CONTEXTO ─── */
+#ctx-menu {
+  position: fixed; z-index: 9000;
+  background: var(--win-gray);
+  border: 1px solid #000; box-shadow: 2px 2px 0 #000;
+  min-width: 180px; display: none; padding: 2px;
+}
+#ctx-menu.open { display: block; }
+.ctx-menu-header {
+  font-size: 10px; color: #666; padding: 4px 10px 2px;
+  text-transform: uppercase; letter-spacing: 1px;
+  border-bottom: 1px solid #999; margin-bottom: 2px;
+}
+.ctx-menu-item {
+  font-size: 12px; padding: 4px 10px; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+}
+.ctx-menu-item:hover { background: var(--win-blue); color: #fff; }
+.ctx-menu-item.active::after { content: ' ✓'; margin-left: auto; }
+.ctx-wp-dot { width: 14px; height: 14px; border: 1px solid #000; flex-shrink: 0; }
+.ctx-menu-sep { height: 1px; background: #888; box-shadow: 0 1px 0 #fff; margin: 3px 4px; }
+
+/* ─── START MENU ─── */
+#start-menu {
+  position: fixed; bottom: 32px; left: 0;
+  display: none; z-index: 1000;
+  background: var(--win-gray);
+  border: 2px solid; border-color: #fff #808080 #808080 #fff;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+  user-select: none; min-width: 220px;
+}
+#start-menu.open { display: flex; }
+.start-menu-sidebar {
+  width: 28px; background: var(--win-blue);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 10px; flex-shrink: 0;
+}
+.start-menu-sidebar span {
+  font-family: var(--font-title); font-size: 18px;
+  color: rgba(255,255,255,0.35);
+  writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 3px;
+}
+.start-menu-content { display: flex; flex-direction: column; padding: 2px 0; flex: 1; }
+.start-menu-label {
+  font-family: var(--font-mono); font-size: 9px; color: #666;
+  padding: 6px 12px 3px; text-transform: uppercase; letter-spacing: 1px;
+}
+.start-menu-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 14px; font-family: var(--font-mono); font-size: 12px;
+  background: none; border: none; text-align: left; cursor: pointer;
+  width: 100%; color: inherit;
+}
+.start-menu-item span { font-size: 15px; line-height: 1; }
+.start-menu-item:hover { background: var(--win-blue); color: #fff; }
+.start-menu-sep { height: 1px; background: #888; box-shadow: 0 1px 0 #fff; margin: 4px 6px; }
+
+/* ─── ÍCONES DA ÁREA DE TRABALHO ─── */
+.desktop-icons { position: absolute; inset: 0; pointer-events: none; z-index: 10; }
+.desktop-icon {
+  position: absolute; width: 74px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 5px 4px; cursor: default;
+  border: 1px solid transparent; border-radius: 1px; pointer-events: all;
+}
+.desktop-icon:hover { background: rgba(0,0,128,0.25); border-color: rgba(100,150,255,0.6); }
+.desktop-icon.selected { background: rgba(0,0,128,0.35); border-color: rgba(100,150,255,0.8); }
+.desktop-icon-img {
+  font-size: 32px; line-height: 1; display: block;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+}
+.desktop-icon-label {
+  font-family: var(--font-mono); font-size: 11px; color: #fff;
+  text-shadow: 1px 1px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000;
+  text-align: center; line-height: 1.2; max-width: 70px; word-break: break-word;
+}

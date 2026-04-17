@@ -7,7 +7,12 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" id="theme-css" href="https://unpkg.com/98.css">
   <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/boot.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/overlays.css">
+  <link rel="stylesheet" href="css/browser.css">
+  <link rel="stylesheet" href="css/theme-xp.css">
 </head>
 <body>
 
@@ -378,11 +383,54 @@
     </div>
   </div>
 
+  <!-- ÍCONES DA ÁREA DE TRABALHO -->
+  <div class="desktop-icons">
+    <div class="desktop-icon" style="top:10px;left:10px" onclick="restoreWindow('main-window')">
+      <span class="desktop-icon-img">👤</span>
+      <span class="desktop-icon-label">ThiagoLima .profile</span>
+    </div>
+    <div class="desktop-icon" style="top:90px;left:10px" onclick="openBrowser('brscience')">
+      <span class="desktop-icon-img">🔬</span>
+      <span class="desktop-icon-label">BrScience</span>
+    </div>
+    <div class="desktop-icon" style="top:170px;left:10px" onclick="openBrowser('cybis')">
+      <span class="desktop-icon-img">☕</span>
+      <span class="desktop-icon-label">Cybis Café</span>
+    </div>
+    <div class="desktop-icon" style="top:250px;left:10px" onclick="openBrowser('uzimais')">
+      <span class="desktop-icon-img">🏢</span>
+      <span class="desktop-icon-label">Uzi Mais</span>
+    </div>
+    <div class="desktop-icon" style="top:330px;left:10px" onclick="openBrowser('pqnpassos')">
+      <span class="desktop-icon-img">👣</span>
+      <span class="desktop-icon-label">Pequenos Passos</span>
+    </div>
+    <div class="desktop-icon" style="top:410px;left:10px" onclick="openBrowser('piishield')">
+      <span class="desktop-icon-img">🛡️</span>
+      <span class="desktop-icon-label">PiiShield</span>
+    </div>
+  </div>
+
 </div><!-- /desktop -->
+
+<!-- START MENU -->
+<div id="start-menu">
+  <div class="start-menu-sidebar"><span>ThiagoOS</span></div>
+  <div class="start-menu-content">
+    <div class="start-menu-label">Projetos Pessoais</div>
+    <button class="start-menu-item" onclick="openBrowser('brscience')"><span>🔬</span>BrScience</button>
+    <button class="start-menu-item" onclick="openBrowser('cybis')"><span>☕</span>Cybis Café</button>
+    <div class="start-menu-sep"></div>
+    <div class="start-menu-label">MelloAit</div>
+    <button class="start-menu-item" onclick="openBrowser('uzimais')"><span>🏢</span>Uzi Mais</button>
+    <button class="start-menu-item" onclick="openBrowser('pqnpassos')"><span>👣</span>Pequenos Passos</button>
+    <button class="start-menu-item" onclick="openBrowser('piishield')"><span>🛡️</span>PiiShield</button>
+  </div>
+</div>
 
 <!-- TASKBAR -->
 <div id="taskbar">
-  <button id="start-btn" onclick="showNotif('ThiagoOS','Sistema ativo!')">
+  <button id="start-btn" onclick="toggleStartMenu(event)">
     <svg class="win-logo" width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
       <rect x="0"  y="0"  width="6" height="6" fill="#f35325"/>
       <rect x="7"  y="0"  width="6" height="6" fill="#81bc06"/>
@@ -404,6 +452,6 @@
   <div id="taskbar-clock">00:00</div>
 </div>
 
-<script src="js/script.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
