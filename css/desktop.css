@@ -44,7 +44,7 @@
   width: 480px; max-width: 100%;
   max-height: calc(100vh - 72px);
   overflow: hidden; flex-shrink: 0;
-  z-index: 50;
+  z-index: 100;
 }
 .win-window .title-bar { cursor: grab; }
 .win-window .title-bar:active { cursor: grabbing; }
