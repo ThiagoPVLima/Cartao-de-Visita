@@ -4,7 +4,7 @@ import { showNotif } from './notifications.js';
 export const maxed = new Set();
 let activeDrag = null;
 
-// Handler global de drag — um único listener evita acúmulo
+// ── Mouse drag ──
 document.addEventListener('mousemove', e => {
   if (!activeDrag) return;
   activeDrag.win.style.left = (e.clientX - activeDrag.ox) + 'px';
@@ -12,21 +12,42 @@ document.addEventListener('mousemove', e => {
 });
 document.addEventListener('mouseup', () => { activeDrag = null; });
 
+// ── Touch drag ──
+document.addEventListener('touchmove', e => {
+  if (!activeDrag) return;
+  e.preventDefault();
+  const t = e.touches[0];
+  activeDrag.win.style.left = (t.clientX - activeDrag.ox) + 'px';
+  activeDrag.win.style.top  = (t.clientY - activeDrag.oy) + 'px';
+}, { passive: false });
+document.addEventListener('touchend', () => { activeDrag = null; });
+
 export function makeDraggable(winId, barId) {
   const win = document.getElementById(winId);
   const bar = document.getElementById(barId);
   if (!win || !bar) return;
 
-  bar.addEventListener('mousedown', e => {
-    if (e.target.tagName === 'BUTTON' || maxed.has(winId)) return;
+  function startDrag(clientX, clientY) {
+    if (maxed.has(winId)) return;
     const r = win.getBoundingClientRect();
     win.style.position  = 'absolute';
     win.style.transform = 'none';
     win.style.left = r.left + 'px';
     win.style.top  = r.top  + 'px';
-    activeDrag = { win, ox: e.clientX - r.left, oy: e.clientY - r.top };
+    activeDrag = { win, ox: clientX - r.left, oy: clientY - r.top };
+  }
+
+  bar.addEventListener('mousedown', e => {
+    if (e.target.tagName === 'BUTTON') return;
+    startDrag(e.clientX, e.clientY);
     e.preventDefault();
   });
+
+  bar.addEventListener('touchstart', e => {
+    if (e.target.tagName === 'BUTTON') return;
+    const t = e.touches[0];
+    startDrag(t.clientX, t.clientY);
+  }, { passive: true });
 }
 
 export function minimizeWindow(id) {
