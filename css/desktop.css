@@ -40,7 +40,7 @@
   user-select: none;
 }
 #main-window {
-  position: relative;
+  position: absolute;
   width: 480px; max-width: 100%;
   max-height: calc(100vh - 72px);
   overflow: hidden; flex-shrink: 0;
