@@ -29,6 +29,7 @@ export const PROJECTS = {
   uzimais:    { name: 'Uzi Mais',         url: 'https://uzimais.com.br/',             icon: '🏢', cat: 'MelloAit' },
   pqnpassos:  { name: 'Pequenos Passos',  url: 'https://pqnpassos.com.br/',           icon: '👣', cat: 'MelloAit' },
   piishield:  { name: 'PiiShield',        url: 'https://piishield.com.br/',           icon: '🛡️', cat: 'MelloAit' },
+  nuprego:  { name: 'NuPrego',        url: 'https://nu-prego.vercel.app/login',           icon: '💵', cat: 'Pessoal' },
 };
 
 export const BOOT_MSGS = [
