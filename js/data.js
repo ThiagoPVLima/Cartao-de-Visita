@@ -1,11 +1,9 @@
-const BASE = 'https://tjkelly.com/wp-content/uploads/';
-
 export const WALLPAPERS = [
-  { name: 'Bliss',          url: BASE + 'windows-xp-desktop-background-wallpaper-bliss-800x600.jpg',           color: '#4a8a3a', image: 'linear-gradient(180deg,#87ceeb 40%,#5aa54e 60%,#3d8b37 100%)' },
-  { name: 'Azul',           url: BASE + 'windows-xp-desktop-background-wallpaper-azul-800x600.jpg',            color: '#003080', image: 'radial-gradient(ellipse at 40% 60%,#0050c8 0%,#001860 100%)' },
-  { name: 'Autumn',         url: BASE + 'windows-xp-desktop-background-wallpaper-autumn-800x600.jpg',          color: '#8b4513', image: 'linear-gradient(135deg,#c8602a,#8b4513)' },
-  { name: 'Vortec Space',   url: BASE + 'windows-xp-desktop-background-wallpaper-vortec-space-800x600.jpg',    color: '#0a0020', image: 'radial-gradient(ellipse at 50% 50%,#3a0080 0%,#0a0020 100%)' },
-  { name: 'Red Moon Desert', url: BASE + 'windows-xp-desktop-background-wallpaper-red-moon-desert-800x600.jpg', color: '#3a1a00', image: 'linear-gradient(180deg,#1a0a00 0%,#8b2a00 50%,#3a1a00 100%)' },
+  { name: 'Bliss',           url: 'img/wallpapers/bliss.jpg',   color: '#4a8a3a', image: 'linear-gradient(180deg,#87ceeb 40%,#5aa54e 60%,#3d8b37 100%)' },
+  { name: 'Azul',            url: 'img/wallpapers/azul.jpg',    color: '#003080', image: 'radial-gradient(ellipse at 40% 60%,#0050c8 0%,#001860 100%)' },
+  { name: 'Autumn',          url: 'img/wallpapers/autumn.jpg',  color: '#8b4513', image: 'linear-gradient(135deg,#c8602a,#8b4513)' },
+  { name: 'Vortec Space',    url: 'img/wallpapers/vortec.jpg',  color: '#0a0020', image: 'radial-gradient(ellipse at 50% 50%,#3a0080 0%,#0a0020 100%)' },
+  { name: 'Red Moon Desert', url: 'img/wallpapers/redmoon.jpg', color: '#3a1a00', image: 'linear-gradient(180deg,#1a0a00 0%,#8b2a00 50%,#3a1a00 100%)' },
 ];
 
 export const ICON_RECTS = {
@@ -30,6 +28,7 @@ export const PROJECTS = {
   pqnpassos:  { name: 'Pequenos Passos',  url: 'https://pqnpassos.com.br/',           icon: '👣', cat: 'MelloAit' },
   piishield:  { name: 'PiiShield',        url: 'https://piishield.com.br/',           icon: '🛡️', cat: 'MelloAit' },
   nuprego:  { name: 'NuPrego',        url: 'https://nu-prego.vercel.app/login',           icon: '💵', cat: 'Pessoal' },
+  ctmanager: { name: 'CT Manager',    url: 'https://ct-manager.fly.dev/?demo=1',          icon: '🥋', cat: 'Pessoal' },
 };
 
 export const BOOT_MSGS = [

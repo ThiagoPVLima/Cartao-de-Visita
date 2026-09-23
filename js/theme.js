@@ -34,9 +34,8 @@ export function setWallpaper(idx, silent = false) {
     const img = new Image();
     img.onload = () => {
       document.body.style.backgroundImage    = `url('${w.url}')`;
-      document.body.style.backgroundSize     = w.tile ? 'auto' : 'cover';
-      document.body.style.backgroundRepeat   = w.tile ? 'repeat' : 'no-repeat';
-      document.body.style.backgroundPosition = w.tile ? 'top left' : 'center';
+      document.body.style.backgroundSize     = 'cover';
+      document.body.style.backgroundPosition = 'center';
     };
     img.onerror = () => {
       document.body.style.backgroundImage    = w.image;
